@@ -1,7 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
+import PrintData from './PrintData';
 
 // const req = new XMLHttpRequest();
 // const API_URL = "https://api.nasa.gov/planetary/apod?api_key=";
@@ -26,7 +26,7 @@ function App() {
 
   const [notes, getNotes] = useState('');
 
-  const url = 'https://api.nasa.gov/planetary/apod?api_key=d9g42caanvvv7mVg5RD1RhqJQslpY6bOsfBtfKku';
+  const url = 'https://aws.random.cat/meow';
 
   useEffect(() => {
     getAllNotes();
@@ -42,6 +42,10 @@ function App() {
 
     .catch(error => console.error(`Error: ${error}`));
   }
+
+  return (
+    <PrintData notes= {notes}/>
+  )
 
 
   // const fetchPics = async () => {
